@@ -98,7 +98,7 @@ abstract class InitialScreenHelper extends State<InitialScreen> {
     ScrollEndNotification scrollEnd,
     GalleryState state,
   ) {
-    if (state.isNoData) return true;
+    if (state.isNoData || state.isLoading) return true;
 
     final metrics = scrollEnd.metrics;
     if (metrics.atEdge) {
